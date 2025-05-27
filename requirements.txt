@@ -1,0 +1,4 @@
+Flask>=2.0
+# Add other dependencies as needed, e.g.:
+# gunicorn
+# python-dotenv
