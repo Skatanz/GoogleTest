@@ -46,13 +46,14 @@ pip install Flask
     This will create `work_log.db` in the root directory if it doesn't exist.
 
 5.  **Run the Application:**
-    To start the Flask development server, run:
+    To start the Flask development server, ensure your current directory is the root of the project (the one containing the `app` directory and `requirements.txt`), then run:
     ```bash
-    python app/main.py
+    python -m app.main
     ```
     This will run the application in debug mode by default.
 
-    Alternatively, if you have the Flask CLI installed and configured (e.g., by setting `FLASK_APP=app/main.py` as an environment variable), you can use:
+    Alternatively, if you have the Flask CLI installed and configured (e.g., by setting `FLASK_APP=app.main` as an environment variable), you can use:
+    Alternatively, if you have the Flask CLI installed and configured (e.g., by setting `FLASK_APP=app.main` as an environment variable), you can use:
     ```bash
     flask run
     ```
@@ -74,15 +75,15 @@ pip install Flask
 
 ## Directory Structure
 
-*   `app/`: Contains the core Flask application.
+*   `app/`: Contains the core Flask application, including its templates and static files.
     *   `__init__.py`: Initializes the `app` directory as a Python package.
     *   `main.py`: Defines Flask routes, handles requests, and serves HTML pages.
     *   `database.py`: Manages SQLite database interactions (connection, table creation, adding entries, querying summaries).
-*   `static/`: Stores static assets served directly to the client.
-    *   `style.css`: Contains all CSS rules for styling the HTML pages.
-    *   `script.js`: Contains client-side JavaScript for dynamic interactions (form submission via Fetch API, loading summaries, QR code generation, and form pre-filling).
-*   `templates/`: Contains HTML templates rendered by Flask.
-    *   `index.html`: The single HTML page for the application.
+    *   `static/`: Stores static assets served directly to the client.
+        *   `style.css`: Contains all CSS rules for styling the HTML pages.
+        *   `script.js`: Contains client-side JavaScript for dynamic interactions.
+    *   `templates/`: Contains HTML templates rendered by Flask.
+        *   `index.html`: The single HTML page for the application.
 *   `requirements.txt`: Lists project dependencies (e.g., `Flask`).
 *   `.gitignore`: Specifies files and directories to be ignored by Git.
 *   `README.md`: This documentation file.
